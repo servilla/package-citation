@@ -83,7 +83,7 @@ def main(solr: str, style: str, revisions: bool, file: str):
 
     citations = list()
     for package_id in package_ids:
-        cite_url = f"https://cite.edirepository.org/cite/{package_id}"
+        cite_url = f"https://cite.edirepository.org/cite/{package_id}?style={style}"
         r = requests.get(cite_url)
         r.raise_for_status()
         citations.append(r.text)
